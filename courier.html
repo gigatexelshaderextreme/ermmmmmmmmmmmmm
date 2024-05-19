@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>an absolutely fucking hard video of the courier from fallout new vegas</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+        #video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" autoplay loop muted playsinline>
+            <source src="https://drive.google.com/uc?export=download&id=1Y4aZ5kV5Ca3iFXZ7w_iDi1HWuRfNVGIi" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let video = document.getElementById('video');
+            video.play();
+
+            // Attempt to make the video go fullscreen
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+
+            // Disable pause functionality
+            video.addEventListener('pause', () => {
+                video.play();
+            });
+        });
+    </script>
+</body>
+</html>
